@@ -1,4 +1,7 @@
 <template>
-  <h1 class="text-3xl font-bold underline">Country Weather App</h1>
+  <HomePage />
 </template>
 
+<script setup lang="ts">
+import HomePage from './views/HomePage.vue';
+</script>
