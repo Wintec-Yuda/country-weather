@@ -65,7 +65,10 @@ http://localhost:5173
 ```
 
 ### 4. Akses Online
-Proyek ini dapat diakses secara online melalui link berikut: [https://www.country-weather-six.vercel.app](country-weather-six.vercel.app)
+Proyek ini dapat diakses secara online melalui link berikut:
+```
+country-weather-six.vercel.app
+```
 
 ---
 
