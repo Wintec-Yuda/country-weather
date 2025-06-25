@@ -65,10 +65,17 @@ http://localhost:5173
 ```
 
 ### 4. Akses Online
-Proyek ini juga dapat diakses secara online di:
+Proyek ini dapat diakses secara online melalui link berikut:
 ```
-https://country-weather-8be567.gitlab.io/
+(https://country-weather-09fcd1.gitlab.io/
 ```
+
+**Catatan Akses**:
+- Dibutuhkan login GitLab untuk mengakses demo online
+- Jika tidak memiliki akun GitLab, Anda dapat:
+  - Menjalankan proyek secara lokal (lihat panduan instalasi di atas)
+  - Membuat akun GitLab gratis di [gitlab.com](https://gitlab.com)
+
 
 ---
 
