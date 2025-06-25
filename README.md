@@ -65,17 +65,7 @@ http://localhost:5173
 ```
 
 ### 4. Akses Online
-Proyek ini dapat diakses secara online melalui link berikut:
-```
-(https://country-weather-09fcd1.gitlab.io/
-```
-
-**Catatan Akses**:
-- Dibutuhkan login GitLab untuk mengakses demo online
-- Jika tidak memiliki akun GitLab, Anda dapat:
-  - Menjalankan proyek secara lokal (lihat panduan instalasi di atas)
-  - Membuat akun GitLab gratis di [gitlab.com](https://gitlab.com)
-
+Proyek ini dapat diakses secara online melalui link berikut: [https://www.country-weather-six.vercel.app](country-weather-six.vercel.app)
 
 ---
 

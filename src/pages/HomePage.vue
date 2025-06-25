@@ -46,7 +46,7 @@
 					:name="country.name.common"
 					:region="country.region"
 					:maps="country.maps"
-					:population="country.population"
+					:population="formatPopulation(country.population)"
 					:languages="country.languages || {}"
 					@click="loadWeather(country.latlng)"
 				>
