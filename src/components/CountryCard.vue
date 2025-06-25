@@ -9,24 +9,24 @@
 
     <p class="text-sm text-gray-600">
       🌍 Region:
-      <span class="font-medium">{{ region || '-' }}</span>
+      <span class="font-medium">{{ region }}</span>
     </p>
 
     <p class="text-sm text-gray-600">
       👥 Populasi:
-      <span class="font-medium">{{ population.toLocaleString() || '-' }}</span>
+      <span class="font-medium">{{ population.toLocaleString() }}</span>
     </p>
 
     <p class="text-sm text-gray-600">
       🗣️ Bahasa:
       <span class="font-medium">
-        {{ languageList || '-' }}
+        {{ languageList }}
       </span>
     </p>
 
     <div class="flex flex-wrap gap-2 text-xs mt-1">
       <a
-        :href="maps.googleMaps || ''"
+        :href="maps.googleMaps"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block px-2 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 transition text-center"
@@ -35,7 +35,7 @@
         🌐 Google Maps
       </a>
       <a
-        :href="maps.openStreetMaps || ''"
+        :href="maps.openStreetMaps"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block px-2 py-1 bg-green-100 text-green-600 rounded hover:bg-green-200 transition text-center"
@@ -70,6 +70,7 @@ const emit = defineEmits<{
 }>()
 
 const languageList = computed(() => {
+  if (!props.languages) return '-'
   return Object.values(props.languages).join(', ')
 })
 

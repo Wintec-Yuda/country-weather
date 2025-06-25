@@ -47,7 +47,7 @@
 					:region="country.region"
 					:maps="country.maps"
 					:population="country.population"
-					:languages="country.languages"
+					:languages="country.languages || {}"
 					@click="loadWeather(country.latlng)"
 				>
 					<div v-if="selected === country.latlng.join(',')">
