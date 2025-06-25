@@ -8,6 +8,11 @@ Dashboard Cuaca Dunia sederhana menggunakan **Vue 3**, **TypeScript**, **Pinia**
 
 - 🔎 Filter negara berdasarkan region
 - 🔍 Pencarian negara berdasarkan nama
+- 📊 Statistik Global:
+  - Total Negara
+  - Total Region  
+  - Total Populasi
+  - Total Bahasa
 - 🌤️ Menampilkan informasi cuaca per negara (suhu, kecepatan angin, arah angin, waktu)
 - 🗺️ Menampilkan Google Maps & Street Maps
 - 📱 Antarmuka responsif + tombol **Scroll to Top**
