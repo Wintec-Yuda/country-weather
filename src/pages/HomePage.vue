@@ -47,7 +47,6 @@ import { ref, onMounted } from "vue";
 import { useCountryStore } from "../stores/countryStore";
 import { useWeatherStore } from "../stores/weatherStore";
 import { storeToRefs } from "pinia";
-import { useDebounce } from '@vueuse/core'
 
 import CountryCard from "../components/CountryCard.vue";
 import WeatherInfo from "../components/WeatherInfo.vue";
