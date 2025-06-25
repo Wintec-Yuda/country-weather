@@ -14,7 +14,7 @@
 
     <p class="text-sm text-gray-600">
       👥 Populasi:
-      <span class="font-medium">{{ population.toLocaleString() }}</span>
+      <span class="font-medium">{{ population }}</span>
     </p>
 
     <p class="text-sm text-gray-600">
@@ -61,7 +61,7 @@ const props = defineProps<{
     googleMaps: string
     openStreetMaps: string
   }
-  population: number
+  population: string
   languages: Record<string, string>
 }>()
 
