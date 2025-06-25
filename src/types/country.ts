@@ -8,4 +8,6 @@ export interface Country {
     googleMaps: string
     openStreetMaps: string
   }
+  population: number
+  languages?: Record<string, string>
 }

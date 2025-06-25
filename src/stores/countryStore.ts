@@ -36,6 +36,34 @@ export const useCountryStore = defineStore("country", {
 			});
 			return ["All Regions", ...Array.from(regionSet).sort()];
 		},
+
+		totalCountries(state): number {
+			return state.countries.length;
+		},
+
+		totalRegions(state): number {
+			const regionSet = new Set(
+				state.countries.map((c) => c.region).filter(Boolean)
+			);
+			return regionSet.size;
+		},
+
+		totalPopulation(state): number {
+			return state.countries.reduce(
+				(acc, country) => acc + (country.population ?? 0),
+				0
+			);
+		},
+
+		totalLanguages(state): number {
+			const langSet = new Set<string>();
+			state.countries.forEach((country) => {
+				if (country.languages) {
+					Object.values(country.languages).forEach((lang) => langSet.add(lang));
+				}
+			});
+			return langSet.size;
+		},
 	},
 
 	actions: {

@@ -59,6 +59,12 @@ Buka di browser:
 http://localhost:5173
 ```
 
+### 4. Akses Online
+Proyek ini juga dapat diakses secara online di:
+```
+https://country-weather-8be567.gitlab.io/
+```
+
 ---
 
 ## 🔧 Tech Stack

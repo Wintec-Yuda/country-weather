@@ -1,10 +1,28 @@
 <template>
   <div
-    class="p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-md hover:shadow-lg transition space-y-3 border border-gray-100 cursor-pointer"
+    class="p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-md hover:shadow-lg hover:bg-blue-100 transition space-y-3 border border-gray-100 cursor-pointer"
+    @click="handleClick"
   >
     <h2 class="text-lg font-bold text-gray-800">{{ name }}</h2>
 
-    <p class="text-sm text-gray-600">🌍 Region: <span class="font-medium">{{ region }}</span></p>
+    <p class="text-xs text-gray-500 italic">Klik untuk melihat info cuaca ☀️</p>
+
+    <p class="text-sm text-gray-600">
+      🌍 Region:
+      <span class="font-medium">{{ region }}</span>
+    </p>
+
+    <p class="text-sm text-gray-600">
+      👥 Population:
+      <span class="font-medium">{{ population.toLocaleString() }}</span>
+    </p>
+
+    <p class="text-sm text-gray-600">
+      🗣️ Languages:
+      <span class="font-medium">
+        {{ languageList }}
+      </span>
+    </p>
 
     <div class="flex flex-wrap gap-2 text-xs mt-1">
       <a
@@ -34,12 +52,28 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+
+const props = defineProps<{
   name: string
   region: string
   maps: {
     googleMaps: string
     openStreetMaps: string
   }
+  population: number
+  languages: Record<string, string>
 }>()
+
+const emit = defineEmits<{
+  (e: 'click'): void
+}>()
+
+const languageList = computed(() => {
+  return Object.values(props.languages).join(', ')
+})
+
+function handleClick() {
+  emit('click')
+}
 </script>
