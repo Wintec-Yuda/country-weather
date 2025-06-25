@@ -1,29 +1,62 @@
-import { defineStore } from 'pinia'
-import type { Country } from '../types/country'
-import { fetchCountries } from '../api/countries'
+import { defineStore } from "pinia";
+import type { Country } from "../types/country";
+import { fetchCountries } from "../api/countries";
 
-export const useCountryStore = defineStore('country', {
-  state: () => ({
-    countries: [] as Country[],
-    loading: false,
-    error: null as string | null
-  }),
+export const useCountryStore = defineStore("country", {
+	state: () => ({
+		countries: [] as Country[],
+		selectedRegion: "All Regions" as string,
+		searchQuery: "",
+		loading: false,
+		error: null as string | null,
+	}),
 
-  actions: {
-    async loadCountries() {
-      this.loading = true
-      this.error = null
+	getters: {
+		filteredCountries(state): Country[] {
+			return state.countries.filter((country) => {
+				const matchRegion =
+					state.selectedRegion === "" ||
+					state.selectedRegion === "All Regions" ||
+					country.region === state.selectedRegion;
 
-      try {
-        const data = await fetchCountries()
-        this.countries = data.sort((a, b) =>
-          a.name.common.localeCompare(b.name.common)
-        )
-      } catch (e) {
-        this.error = 'Gagal mengambil data negara'
-      } finally {
-        this.loading = false
-      }
-    }
-  }
-})
+				const matchSearch =
+					state.searchQuery.trim() === "" ||
+					country.name.common
+						.toLowerCase()
+						.includes(state.searchQuery.toLowerCase());
+
+				return matchRegion && matchSearch;
+			});
+		},
+
+		regions(state): string[] {
+			const regionSet = new Set<string>();
+			state.countries.forEach((c) => {
+				if (c.region) regionSet.add(c.region);
+			});
+			return ["All Regions", ...Array.from(regionSet).sort()];
+		},
+	},
+
+	actions: {
+		async loadCountries() {
+			this.loading = true;
+			this.error = null;
+
+			try {
+				const res = await fetchCountries();
+				this.countries = res.sort((a, b) =>
+					a.name.common.localeCompare(b.name.common)
+				);
+			} catch (err) {
+				this.error = "Gagal memuat data negara";
+			} finally {
+				this.loading = false;
+			}
+		},
+
+		setRegion(region: string) {
+			this.selectedRegion = region;
+		},
+	},
+});

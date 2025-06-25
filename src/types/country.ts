@@ -2,6 +2,10 @@ export interface Country {
   name: {
     common: string
   }
-  latlng: [number, number]  // [latitude, longitude]
   region: string
+  latlng: [number, number]  // [latitude, longitude]
+  maps: {
+    googleMaps: string
+    openStreetMaps: string
+  }
 }
