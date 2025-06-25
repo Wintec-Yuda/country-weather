@@ -10,7 +10,6 @@ build:
     - npm ci
   script:
     - npm run build
-    - mkdir public
     - cp -r dist/* public/
 
 pages:
