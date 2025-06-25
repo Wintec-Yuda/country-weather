@@ -13,12 +13,12 @@
     </p>
 
     <p class="text-sm text-gray-600">
-      👥 Population:
+      👥 Populasi:
       <span class="font-medium">{{ population.toLocaleString() }}</span>
     </p>
 
     <p class="text-sm text-gray-600">
-      🗣️ Languages:
+      🗣️ Bahasa:
       <span class="font-medium">
         {{ languageList }}
       </span>
