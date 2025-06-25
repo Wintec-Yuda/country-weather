@@ -20,12 +20,12 @@
 					valueClass="text-green-600"
 				/>
 				<SummaryCard
-					title="Total Population"
+					title="Total Populasi"
 					:value="formatPopulation(totalPopulation)"
 					valueClass="text-orange-500"
 				/>
 				<SummaryCard
-					title="Total Languages"
+					title="Total Bahasa"
 					:value="totalLanguages"
 					valueClass="text-purple-600"
 				/>
